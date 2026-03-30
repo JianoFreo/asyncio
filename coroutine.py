@@ -27,4 +27,4 @@ async def main():
     print("End of main coroutine")
 
 # Run the main coroutine
-asyncio. run(main())
+asyncio.run(main())
