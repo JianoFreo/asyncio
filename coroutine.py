@@ -13,7 +13,8 @@ import asyncio
 # Define a coroutine that simulates a time-consuming task
 async def fetch_data(delay):
     print("Fetching data ... ")
-    await asyncio.sleep(delay) # Simulate an I/0 operation with a sleep
+    await asyncio.sleep(delay) # Simulate an I/0 operation with a sleep 
+                               # asyncio is a predefined coroutine
     print("Data fetched")
     return {"data": "Some data"} # Return some data
 
