@@ -23,6 +23,10 @@ async def main():
     
     await t1
     await t2
+    # await asyncio.gather(t2, t1)
+    # Both tasks are already scheduled
+    # gather() does NOT control execution order
+    # It just waits for them to finish
     print("Tasks ended")
 
 asyncio.run(main())
