@@ -11,8 +11,8 @@ async def main():
     
     # t1 = await asyncio.create_task(task("Task A"))
     # t2 = await asyncio.create_task(task("Task B"))
-    # Task A is created ✅
-    # Then immediately awaited ❗
+    # Task A is created 
+    # Then immediately awaited 
     # So the program stops and runs Task A fully
 
     # supposed output so far:

@@ -13,7 +13,7 @@ async def fetch_data(task, inputs, id):
 async def main():
     inputs = int(input("Input the amount of inputs "))
     id = int(input("input your ID "))
-    # This comment is sequential not concurrent (Async)
+    # These comments is sequential not concurrent (Async)
     # taskA frist then taskB
     # taskA = fetch_data("Task A",inputs, id)
     # taskB = fetch_data("Task B", inputs, 100 )
