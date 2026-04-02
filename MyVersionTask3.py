@@ -3,16 +3,15 @@ import asyncio
 records = {}
 
 async def fetch_data(your_id, name, secs):
-    print("processing...")
     for i in range(secs, -1, -1):
         await asyncio.sleep(1)
-        print(f"In T minus {i} seconds... ")
+        print(f"running id {your_id} In T minus {i} seconds... ")
     reversed_name = name[::-1]
     if (your_id % 10) < 5:
         new_id = str(your_id) + "M"
     else:
         new_id = str(your_id) + "F"
-    return new_id, reversed_name
+    return new_id, reversed_name, name
 
 async def main():
     while True:
@@ -21,9 +20,15 @@ async def main():
             name = str(input("what is your name? lets reverse it "))
             secs = int(input("how many seconds until it returns? "))
              
-            task = asyncio.create_task(fetch_data(your_id, name, secs))
-            result = await task
-            records[result[0]] = result[1]
+            task1 = asyncio.create_task(fetch_data(your_id, name, secs))
+            task2 = asyncio.create_task(fetch_data(your_id + 1, name + " II", secs))
+            print("processing...")
+            result1 = await task1
+            result2 = await task2
+            
+            records[result1[0]] = result1[1]
+            records[result2[0]] = result2[2]
+            
             print(records)
         except ValueError as e:
             print(f"Wrong value son {e}")
