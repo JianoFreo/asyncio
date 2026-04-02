@@ -1,5 +1,4 @@
 import asyncio
-import threading
 
 records = {}
 
@@ -34,14 +33,4 @@ async def main():
         except ValueError as e:
             print(f"Wrong value son {e}")
             
-def coroutines():
-    asyncio.run(main())
-
-def stopper():
-    input("press enter to stop")
-    
-thread1 = threading.Thread(target=stopper, daemon=False)    
-thread2 = threading.Thread(target=coroutines, daemon=True)
-
-thread1.start()
-thread2.start()
+asyncio.run(main())
