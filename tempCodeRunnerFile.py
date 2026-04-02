@@ -1,1 +1,4 @@
-    print(result1, result2, result3)
+           
+id = 10
+new_id = str(id) + "M"
+print(new_id)
