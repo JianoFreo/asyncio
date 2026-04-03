@@ -33,7 +33,7 @@ async def fetch_data(your_id, name, secs):
         new_id = str(your_id) + "M"
     else:
         new_id = str(your_id) + "F"
-    return new_id, name
+    return [new_id, name]
 
 async def main():
     ids = []
@@ -55,7 +55,7 @@ async def main():
         except ValueError as e:
             print(f"Wrong value son {e}")
     tasks = []
-    dicts ={}
+    # dicts = {"people":{}}
     async with asyncio.TaskGroup() as tg:
         for i, j, k in zip(ids, names, secses):
             task = tg.create_task(fetch_data(i, j, k))
